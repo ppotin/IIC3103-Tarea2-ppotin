@@ -1,5 +1,9 @@
 class IngredientesController < ApplicationController
-  before_action :set_ingrediente, only: [:show, :update, :destroy]
+  #before_action :set_ingrediente, only: [:show, :update, :destroy]
+
+  def is_number? string
+    true if Float(string) rescue false
+  end
 
   # GET /ingredientes
   def index
@@ -10,17 +14,28 @@ class IngredientesController < ApplicationController
 
   # GET /ingredientes/1
   def show
-    render json: @ingrediente
+    begin
+      @ingrediente = Ingrediente.find(params[:id])
+      render json: @ingrediente
+    rescue
+      @id = params[:id]
+      if is_number?(@id)
+        render json: {code: 404, description: "Ingrediente inexistente"}
+      else 
+        render json: {code: 400, description: "Input invalido"}
+      end
+    end
   end
 
   # POST /ingredientes
   def create
-    @ingrediente = Ingrediente.new(ingrediente_params)
-
-    if @ingrediente.save
-      render json: @ingrediente, status: :created, location: @ingrediente
-    else
-      render json: @ingrediente.errors, status: :unprocessable_entity
+    begin
+      @ingrediente = Ingrediente.new(ingrediente_params)
+      if @ingrediente.save
+        render json: @ingrediente, status: :created, location: @ingrediente
+      end
+    rescue
+      render json: {code: 400, description: "Input invalido"}
     end
   end
 
@@ -35,7 +50,25 @@ class IngredientesController < ApplicationController
 
   # DELETE /ingredientes/1
   def destroy
-    @ingrediente.destroy
+    begin
+      @ingrediente = Ingrediente.find(params[:id])
+      @hamburguesas = Hamburguesa.all
+      @aux = 0
+      @hamburguesas.each do |hamburguesa|
+        if hamburguesa.ingredientes.where("id =" + params[:id]).exists?
+          @aux = 1
+          break
+        end
+      end
+      if @aux == 0
+        @ingrediente.destroy
+        render json: {code: 200, description: "Ingrediente eliminado"}
+      else 
+        render json: {code: 409, description: "Ingrediente no se puede borrar, se encuentra presente en una hamburguesa"}
+      end
+    rescue
+      render json: {code: 404, description: "Ingrediente inexistente"}
+    end
   end
 
   private
