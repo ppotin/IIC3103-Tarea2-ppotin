@@ -1,7 +1,7 @@
 class HamburguesasController < ApplicationController
   #before_action :set_hamburguesa, only: [:show, :update, :destroy]
 
-  $PATH = 'http://localhost:3000/'
+  $PATH = 'https://restaurante-ppotin.herokuapp.com/'
 
   def is_number? string
     true if Float(string) rescue false
