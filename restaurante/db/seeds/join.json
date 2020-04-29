@@ -1,0 +1,90 @@
+[{
+    "hamburguesa_id": 1,
+    "ingrediente_id": 1
+  },
+
+  {
+    "hamburguesa_id": 2,
+    "ingrediente_id": 1
+  },
+
+  {
+    "hamburguesa_id": 2,
+    "ingrediente_id": 7
+  },
+
+  {
+    "hamburguesa_id": 3,
+    "ingrediente_id": 1
+  },
+
+  {
+    "hamburguesa_id": 3,
+    "ingrediente_id": 6
+  },
+
+  {
+    "hamburguesa_id": 3,
+    "ingrediente_id": 3
+  },
+
+  {
+    "hamburguesa_id": 3,
+    "ingrediente_id": 2
+  },
+
+  {
+    "hamburguesa_id": 4,
+    "ingrediente_id": 3
+  },
+
+  {
+    "hamburguesa_id": 4,
+    "ingrediente_id": 6
+  },
+
+  {
+    "hamburguesa_id": 4,
+    "ingrediente_id": 5
+  },
+
+  {
+    "hamburguesa_id": 4,
+    "ingrediente_id": 2
+  },
+
+  {
+    "hamburguesa_id": 4,
+    "ingrediente_id": 1
+  },
+
+  {
+    "hamburguesa_id": 5,
+    "ingrediente_id": 1
+  },
+
+  {
+    "hamburguesa_id": 5,
+    "ingrediente_id": 5
+  },
+
+  {
+    "hamburguesa_id": 6,
+    "ingrediente_id": 3
+  },
+
+  {
+    "hamburguesa_id": 6,
+    "ingrediente_id": 6
+  },
+
+  {
+    "hamburguesa_id": 6,
+    "ingrediente_id": 7
+  },
+
+  {
+    "hamburguesa_id": 6,
+    "ingrediente_id": 8
+  }
+  ]

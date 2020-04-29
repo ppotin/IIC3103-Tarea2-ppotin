@@ -1,0 +1,41 @@
+[{
+    "nombre": "De la casa",
+    "precio": 5990,
+    "descripcion": "Exquisita hamburguesa con queso y salsa BBQ, la especialidad de la casa",
+    "imagen": "https://cdn.hswstatic.com/gif/cheeseburger-1.jpg"
+},
+
+{
+    "nombre": "Korzo Fried Burger",
+    "precio": 8590,
+    "descripcion": "Un pan tostadito, la carne jugosa con el queso derretido y pepinillos encurtidos cubiertos con mostaza",
+    "imagen": "http://static.iris.net.co/semana/upload/images/2015/5/28/429329_175729_1.jpg"
+},
+
+{
+    "nombre": "Jalapeño Bacon Cheeseburger",
+    "precio": 7490,
+    "descripcion": "Esta hamburguesa tejana combina medio kilo de carne, queso derretido, jalapeños, tomates, lechuga y tocino empanizado y frito hasta que quede dorado",
+    "imagen": "http://static.iris.net.co/semana/upload/images/2015/5/28/429329_175730_4.jpg"
+},
+
+{
+    "nombre": "Kuma Burger",
+    "precio": 6990,
+    "descripcion": "Este plato lleva cebolla roja, tomate, lechuga, tocino y queso cheddar picante. Encima de todos estos ingredientes  se coloca un delicioso huevo frito",
+    "imagen": "http://static.iris.net.co/semana/upload/images/2015/5/28/429331_18237_2.jpg"
+},
+
+{
+    "nombre": "Jucy Lucy",
+    "precio": 8450,
+    "descripcion": "la tradicional hamburguesa Jucy Lucy de carne rellena de queso cheddar y fontina derretidos y cebolla asada",
+    "imagen": "https://revistaelconocedor.com/wp-content/uploads/2017/01/IMG_1866.jpg"
+},
+
+{
+    "nombre": "Cangreburger",
+    "precio": 5990,
+    "descripcion": "La Cangreburger es la comida principal del Crustáceo Cascarudo. Su aspecto es similar a una hamburguesa. Los ingredientes incluyen lechuga, pepinillos, tomate, mostaza, ketchup, salsa secreta, dos panes y cebollas",
+    "imagen": "https://cdn.playbuzz.com/cdn/a503e7eb-0166-4f30-86d6-d276dfcbd3bc/42447522-65cd-428e-ae12-14a2b3754be4_560_420.jpg"
+}]

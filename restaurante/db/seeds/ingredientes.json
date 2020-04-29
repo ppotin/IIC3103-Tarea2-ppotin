@@ -1,0 +1,39 @@
+[{
+  "nombre": "Queso Cheddar",
+  "descripcion": "Cheddar de la mejor calidad"
+},
+
+{
+    "nombre": "Tocino",
+    "descripcion": "El tocino frito crujiente es el complemento ideal para tu hamburguesa"
+},
+
+{
+    "nombre": "Lechuga",
+    "descripcion": "La lechuga aporta vitaminas y minerales que enriquecen la dieta sin aportar apenas calorías"
+},
+
+{
+    "nombre": "Huevo frito",
+    "descripcion": "El huevo frito es una forma muy rápida y bastante tradicional de hacer una fritura de un huevo"
+},
+
+{
+    "nombre": "Cebolla caramelizada",
+    "descripcion": "La cebolla caramelizada es un ingrediente estrella en muchas recetas de cocina"
+},
+
+{
+    "nombre": "Tomate",
+    "descripcion": "El tomate es un alimento de bajo contenido calórico, rico en vitamina C y licopeno, que lo convierten en un aliado de la cocina saludable"
+},
+
+{
+    "nombre": "Pepinillos",
+    "descripcion": "Las rodajas de pepinillo Heinz son ideales para las hamburguesas. Los puristas dicen que incluso una Burger sin rodajas de pepinillo Heinz ¡no es una verdadera hamburguesa americana!"
+},
+
+{
+    "nombre": "Ketchup",
+    "descripcion": "Es una salsa de tomate condimentada con vinagre, azúcar y sal, además de diversas especias"
+}]
