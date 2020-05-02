@@ -51,9 +51,9 @@ class HamburguesasController < ApplicationController
     rescue
       @id = params[:id]
       if is_number?(@id)
-        render json: {code: 404, description: "harburguesa inexistente"}
+        render :status => "404", json: {code: 404, description: "harburguesa inexistente"}
       else 
-        render json: {code: 400, description: "input invalido"}
+        render :status => "400", json: {code: 400, description: "input invalido"}
       end
     end
   end
@@ -63,10 +63,21 @@ class HamburguesasController < ApplicationController
     begin
       @hamburguesa = Hamburguesa.new(hamburguesa_params)
       if @hamburguesa.save
-        render json: @hamburguesa, status: :created, location: @hamburguesa
+        @entidad = {
+        "id" => @hamburguesa.id,
+        "nombre" => @hamburguesa.nombre,
+        "precio" => @hamburguesa.precio,
+        "descripcion" => @hamburguesa.descripcion,
+        "imagen" => @hamburguesa.imagen,
+        "ingredientes" => []
+        }
+        @hamburguesa.ingredientes.each do |ingrediente|
+          @entidad["ingredientes"] << {"path" => $PATH + "ingrediente/" + ingrediente.id.to_s}
+        end
+        render json: @entidad
       end
     rescue 
-      render json: {code: 400, description: "input invalido"}
+      render :status => "400", json: {code: 400, description: "input invalido"}
     end
   end
 
@@ -89,13 +100,13 @@ class HamburguesasController < ApplicationController
         render json: @entidad
       end
     rescue ActionController::ParameterMissing
-      render json: {code: 400, description: "input invalido"}
+      render :status => "400", json: {code: 400, description: "input invalido"}
     rescue ActiveRecord::RecordNotFound
       @id = params[:id]
       if is_number?(@id)
-        render json: {code: 404, description: "harburguesa inexistente"}
+        render :status => "404", json: {code: 404, description: "harburguesa inexistente"}
       else 
-        render json: {code: 400, description: "input invalido"}
+        render :status => "400", json: {code: 400, description: "input invalido"}
       end
     end
   end
@@ -107,7 +118,7 @@ class HamburguesasController < ApplicationController
       @hamburguesa.destroy
       render json: {code: 200, description: "hamburguesa eliminada"}
     rescue  
-      render json: {code: 404, description: "hamburguesa inexistente"}
+      render :status => "404", json: {code: 404, description: "hamburguesa inexistente"}
     end
   end
 
@@ -116,14 +127,14 @@ class HamburguesasController < ApplicationController
     begin
       @hamburguesa = Hamburguesa.find(params[:hamburguesa_id])
       if !@hamburguesa.ingredientes.where("id =" + params[:ingrediente_id]).exists?
-        render json: {code: 404, description: "Ingrediente inexistente en la hamburguesa"}
+        render :status => "404", json: {code: 404, description: "Ingrediente inexistente en la hamburguesa"}
       else 
         @ingrediente = Ingrediente.find(params[:ingrediente_id])
         @hamburguesa.ingredientes.destroy(@ingrediente)
         render json: {code: 200, description: "Ingrediente retirado"}
       end
     rescue 
-      render json: {code: 400, description: "Id de hamburguesa inválido"}
+      render :status => "400", json: {code: 400, description: "Id de hamburguesa inválido"}
     end
   end
 
@@ -135,13 +146,13 @@ class HamburguesasController < ApplicationController
         begin
           @hamburguesa = Hamburguesa.find(params[:hamburguesa_id])
           @hamburguesa.ingredientes << @ingrediente
-          render json: {code: 201, description: "Ingrediente agreagado"}
+          render :status => "201", json: {code: 201, description: "Ingrediente agreagado"}
         rescue ActiveRecord::RecordNotFound
-          render json: {code: 400, description: "Id de hamburguesa inválido"}
+          render :status => "400", json: {code: 400, description: "Id de hamburguesa inválido"}
         end
       end
     rescue ActiveRecord::RecordNotFound
-      render json: {code: 404, description: "Ingrediente inexistente"}
+      render :status => "404", json: {code: 404, description: "Ingrediente inexistente"}
     end
   end
 

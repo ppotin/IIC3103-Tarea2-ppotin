@@ -20,9 +20,9 @@ class IngredientesController < ApplicationController
     rescue
       @id = params[:id]
       if is_number?(@id)
-        render json: {code: 404, description: "Ingrediente inexistente"}
+        render :status => "404", json: {code: 404, description: "Ingrediente inexistente"}
       else 
-        render json: {code: 400, description: "Input invalido"}
+        render :status => "400", json: {code: 400, description: "Input invalido"}
       end
     end
   end
@@ -35,7 +35,7 @@ class IngredientesController < ApplicationController
         render json: @ingrediente, status: :created, location: @ingrediente
       end
     rescue
-      render json: {code: 400, description: "Input invalido"}
+      render :status => "400", json: {code: 400, description: "Input invalido"}
     end
   end
 
@@ -64,10 +64,10 @@ class IngredientesController < ApplicationController
         @ingrediente.destroy
         render json: {code: 200, description: "Ingrediente eliminado"}
       else 
-        render json: {code: 409, description: "Ingrediente no se puede borrar, se encuentra presente en una hamburguesa"}
+        render :status => "409", json: {code: 409, description: "Ingrediente no se puede borrar, se encuentra presente en una hamburguesa"}
       end
     rescue
-      render json: {code: 404, description: "Ingrediente inexistente"}
+      render :status => "404", json: {code: 404, description: "Ingrediente inexistente"}
     end
   end
 
