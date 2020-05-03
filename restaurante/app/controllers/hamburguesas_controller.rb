@@ -74,7 +74,7 @@ class HamburguesasController < ApplicationController
         @hamburguesa.ingredientes.each do |ingrediente|
           @entidad["ingredientes"] << {"path" => $PATH + "ingrediente/" + ingrediente.id.to_s}
         end
-        render json: @entidad
+        render :status => "201", json: @entidad
       end
     rescue 
       render :status => "400", json: {code: 400, description: "input invalido"}
